@@ -14,7 +14,7 @@ request = pc.makeRequestRSpec()
 # Add a raw PC to the request.
 node = request.RawPC("node")
 
-node.hardware_type = 'r7525'
+node.hardware_type = 'r6615'
 
 # Install and execute a script that is contained in the repository.
 node.addService(pg.Execute(shell="sh", command="/local/repository/setup.sh"))
