@@ -8,6 +8,8 @@ sudo apt install -y python3-pip python3.10-venv
 sudo apt install -y nvidia-driver-550
 sudo modprobe nvidia
 sudo modprobe nvidia_uvm
+sudo modprobe nvidia_modeset
+sudo modprobe nvidia_drm
 
 echo "NVIDIA DEBUGGING PURPOSES ONLY:"
 lsmod | grep nvidia
