@@ -9,11 +9,11 @@ sudo apt install -y python3-pip python3.10-venv
 cd /local/repository
 
 echo "Step 2: Activating virtual environment"
-sudo python3 -m venv env
+python3 -m venv env
 source env/bin/activate
 
 echo "Step 3: Installing torch and transformers"
-sudo pip install --upgrade pip
+pip install --upgrade pip
 pip install torch
 pip install transformers
 
