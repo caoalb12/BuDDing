@@ -21,7 +21,7 @@ pip install --upgrade pip
 pip install torch
 pip install transformers
 
-# echo "Step 4: Other Startup Commands"
-# mv profile.py temp.py # Temporary fix for profile.py issue
-# git lfs pull # Pulling router.pt
+echo "Step 4: Other Startup Commands"
+mv profile.py temp.py # Temporary fix for profile.py issue
+git lfs pull # Pulling router.pt
 echo "FINISHED"
