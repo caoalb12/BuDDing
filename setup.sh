@@ -1,12 +1,10 @@
 #!/bin/bash
 
-set -euo pipefail
+set -Eeuo pipefail
 
 echo "Step 1: Updating apt packages"
-sudo apt update
-sudo apt install python3-pip
-sudo pip install --upgrade pip
-sudo apt install python3.10-venv
+sudo apt update -y
+sudo apt install -y python3-pip python3.10-venv
 
 cd /local/repository
 
@@ -15,6 +13,7 @@ sudo python3 -m venv env
 source env/bin/activate
 
 echo "Step 3: Installing torch and transformers"
+sudo pip install --upgrade pip
 pip install torch
 pip install transformers
 
