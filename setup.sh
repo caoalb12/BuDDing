@@ -18,5 +18,5 @@ sudo apt install -y nvidia-utils-580 nvidia-driver-580
 
 sudo rm -f /tmp/get-pip.py
 
-echo "Step 5: Rebooting system"
-sudo reboot
+# echo "Step 5: Rebooting system"
+# sudo reboot
