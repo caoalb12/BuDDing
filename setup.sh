@@ -5,8 +5,6 @@ set -Eeuo pipefail
 echo "Step 1: Updating apt packages"
 sudo apt update -y
 sudo apt install -y python3-pip python3.10-venv git-lfs nvidia-driver-580 nvidia-utils-580
-sudo dkms autoinstall
-sudo modprobe -r nouveau
 sudo modprobe nvidia
 sudo modprobe nvidia_uvm
 
