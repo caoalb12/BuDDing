@@ -23,3 +23,6 @@ When starting experiment:
 3. Cmd F to find "nvidia-smi"
 	a. if there isn't any output for nvidia-smi, then go to the gear -> reboot node and wait
 	b. if the box of GPU info shows up then you're good to go
+4. For some reason rename profile.py to temp.py (it's too hard to explain just do it)
+    a. DO NOT push temp.py to github
+5. Set HF_TOKEN or smth idk
