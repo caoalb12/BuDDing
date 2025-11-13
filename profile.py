@@ -10,20 +10,8 @@ pc = portal.Context()
 
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
- 
-# Add a raw PC to the request.
-pc.defineParameter("cluster", "Cluster", portal.ParameterType.STRING,
-                  "wisc.cloudlab.us", ["wisc.cloudlab.us", "clemson.cloudlab.us", "utah.cloudlab.us"])
-params = pc.bindParameters()
 
 node = request.RawPC("node")
-
-if params.cluster == "wisc.cloudlab.us":
-    node.disk_image = "urn:publicid:IDN+wisc.cloudlab.us+image+emulab-ops:UBUNTU20-64-STD"
-elif params.cluster == "clemson.cloudlab.us":
-    node.disk_image = "urn:publicid:IDN+clemson.cloudlab.us+image+emulab-ops:UBUNTU20-64-STD"
-elif params.cluster == "utah.cloudlab.us":
-    node.disk_image = "urn:publicid:IDN+utah.cloudlab.us+image+emulab-ops:UBUNTU20-64-STD"
 
 node.hardware_type = 'c4130'
 
