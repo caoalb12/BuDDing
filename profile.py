@@ -25,7 +25,7 @@ elif params.cluster == "clemson.cloudlab.us":
 elif params.cluster == "utah.cloudlab.us":
     node.disk_image = "urn:publicid:IDN+utah.cloudlab.us+image+emulab-ops:UBUNTU20-64-STD"
 
-node.hardware_type = 'ibm8335'
+node.hardware_type = 'c4130'
 
 # Install and execute a script that is contained in the repository.
 # node.addService(pg.Execute(shell="sh", command="chmod +x /local/repository/setup.sh"))
