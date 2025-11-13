@@ -14,7 +14,7 @@ request = pc.makeRequestRSpec()
 # Add a raw PC to the request.
 node = request.RawPC("node")
 
-node.disk_image = "emulab-ops/UBUNTU20-64-STD"
+node.disk_image = "urn:publicid:IDN+wisc.cloudlab.us+image+emulab-ops:UBUNTU20-64-STD"
 
 node.hardware_type = 'ibm8335'
 
