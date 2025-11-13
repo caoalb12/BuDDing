@@ -19,6 +19,7 @@ node.disk_image = "urn:publicid:IDN+wisc.cloudlab.us+image+emulab-ops:UBUNTU20-6
 node.hardware_type = 'ibm8335'
 
 # Install and execute a script that is contained in the repository.
+node.addService(pg.Execute(shell="sh", command="chmod +x /local/repository/setup.sh"))
 node.addService(pg.Execute(shell="sh", command="/local/repository/setup.sh"))
 
 # Print the RSpec to the enclosing page.
