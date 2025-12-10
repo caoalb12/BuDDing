@@ -1,28 +1,33 @@
-# Setup Instructions
+# BuDDing
 
-1. SSH into the remote machine.
-2. Clone BuDDing repository.
-2. Run `chmod +x ./setup.sh`.
-3. Run `./setup.sh`. This will install the necessary libraries and then reboot the machine.
-4. Monitor the CloudLab UI. When the node is ready again, SSH back into the machine.
-5. Set your HuggingFace token with `export HF_TOKEN=...`.
+BuDDing is a project focused on implementing efficient inference with dynamic pruning and parallelization. The pipeline consists of 4 main steps:
 
-# CloudLab Experiment Instructions
+## Step 1: Generate Omission Sets
 
-Before starting experiment if not using hardware that’s NOT r7525:
+Run every cell in order in `notebook_files/GenerateOmissionSets.ipynb`.
 
-1. Go to BuDDing GitHub -> profile.py and change node.hardware_type variable to be the hardware you’re using (do not need to specify region it should automatically work)
-2. Text me to update the profile on cloudlab (😭)
+**Output:** Results are saved in `{dataset_name}_pruning_log.json` files for each of the three datasets.
 
-When starting experiment:
+## Step 2: Create Dataset to Train Router Model
 
-1. Start experiment like normal
-2. When you get to the point where it says the experiment is "Finished" check the service logs
-	a. click the gear in list view
-	b. click on Execute Service Logs
-3. Cmd F to find "nvidia-smi"
-	a. if there isn't any output for nvidia-smi, then go to the gear -> reboot node and wait
-	b. if the box of GPU info shows up then you're good to go
-4. For some reason rename profile.py to temp.py (it's too hard to explain just do it)
-    a. DO NOT push temp.py to github
-5. Set HF_TOKEN or smth idk
+Run every cell in order in `notebook_files/MakeRouterTrainingData.ipynb`.
+
+**Output:** The router training dataset is saved in `router_training_data.jsonl`.
+
+## Step 3: Train Router Model
+
+Run `notebook_files/RouterTraining.ipynb` to train the router model.
+
+**Output:** The saved router model is available in `best_model.pt`.
+
+## Step 4: Evaluate and Implement
+
+Run `notebook_files/EvaluateBuDDing.ipynb` cell by cell to evaluate the implementation.
+
+### Step 4a: Batching with Dynamic Pruning
+See output metrics in the notebook cell outputs.
+
+### Step 4b: Parallelization
+See output metrics in the notebook cell outputs.
+
+**Output:** View the evaluation metrics directly in the notebook cell outputs.
